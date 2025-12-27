@@ -1,5 +1,5 @@
 /* ======================================================
-   GEARGUARD SPA CONTROLLER – FINAL VERSION
+   APP INITIALIZATION
 ====================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,8 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   navItems.forEach(item => {
     item.addEventListener("click", () => {
-      // Active state
+      // Remove active from all
       navItems.forEach(n => n.classList.remove("active"));
+
+      // Add active to clicked
       item.classList.add("active");
 
       const page = item.dataset.page;
@@ -22,8 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Load default page
+  setActiveTab("dashboard");
   navigate("dashboard");
 });
+
+/* ======================================================
+   SET ACTIVE TAB (UTILITY)
+====================================================== */
+function setActiveTab(page) {
+  document.querySelectorAll(".top-nav span").forEach(tab => {
+    tab.classList.toggle("active", tab.dataset.page === page);
+  });
+}
 
 /* ======================================================
    ROUTER FUNCTION
@@ -31,12 +43,22 @@ document.addEventListener("DOMContentLoaded", () => {
 function navigate(page) {
   console.log("➡️ Navigating to:", page);
 
+  const app = document.getElementById("app");
+
+  if (!app) {
+    console.error("❌ #app container not found");
+    return;
+  }
+
+  // Clear previous content (important for SPA)
+  app.innerHTML = "";
+
   switch (page) {
     case "dashboard":
       if (typeof loadDashboard === "function") {
         loadDashboard();
       } else {
-        console.error("❌ loadDashboard() not found");
+        showError("Dashboard module not loaded");
       }
       break;
 
@@ -44,7 +66,7 @@ function navigate(page) {
       if (typeof loadCalendar === "function") {
         loadCalendar();
       } else {
-        console.error("❌ loadCalendar() not found");
+        showError("Calendar module not loaded");
       }
       break;
 
@@ -52,7 +74,7 @@ function navigate(page) {
       if (typeof loadEquipment === "function") {
         loadEquipment();
       } else {
-        console.error("❌ loadEquipment() not found");
+        showError("Equipment module not loaded");
       }
       break;
 
@@ -60,7 +82,7 @@ function navigate(page) {
       if (typeof loadReporting === "function") {
         loadReporting();
       } else {
-        console.error("❌ loadReporting() not found");
+        showError("Reporting module not loaded");
       }
       break;
 
@@ -68,11 +90,25 @@ function navigate(page) {
       if (typeof loadTeams === "function") {
         loadTeams();
       } else {
-        console.error("❌ loadTeams() not found");
+        showError("Teams module not loaded");
       }
       break;
 
     default:
       console.warn("⚠️ Unknown page:", page);
+      showError("Page not found");
   }
+}
+
+/* ======================================================
+   FALLBACK UI (ERROR HANDLER)
+====================================================== */
+function showError(message) {
+  const app = document.getElementById("app");
+  app.innerHTML = `
+    <div style="padding:40px; opacity:0.7;">
+      <h3>⚠️ ${message}</h3>
+      <p>Please check module loading order.</p>
+    </div>
+  `;
 }

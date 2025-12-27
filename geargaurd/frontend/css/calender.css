@@ -1,0 +1,123 @@
+body {
+  background: radial-gradient(circle at top, #111, #000 70%);
+  color: #fff;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  padding: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls select {
+  background: #111;
+  color: white;
+  border: 1px solid #333;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 20px 0;
+  opacity: 0.6;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 18px;
+}
+
+.day {
+  border: 1px dashed #333;
+  border-radius: 16px;
+  min-height: 120px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.day:hover {
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-2px);
+}
+
+.date {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.task {
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.preventive {
+  background: rgba(59,130,246,0.2);
+  color: #60a5fa;
+}
+
+.corrective {
+  background: rgba(239,68,68,0.2);
+  color: #f87171;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background: #0f0f0f;
+  border-radius: 18px;
+  padding: 24px;
+  width: 320px;
+  border: 1px solid #333;
+}
+
+.modal-box input,
+.modal-box select {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+#saveBtn {
+  background: #3b82f6;
+  color: white;
+}
+
+#cancelBtn {
+  background: transparent;
+  color: #aaa;
+  border: 1px solid #333;
+}
