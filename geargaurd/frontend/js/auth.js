@@ -1,6 +1,5 @@
-require("dotenv").config();
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: "AIzaSyCbELfNLvlQ5_qaXX9YmjGUwdyZI28bPe0",
   authDomain: "gear-gaurd.firebaseapp.com",
   projectId: "gear-gaurd",
 };

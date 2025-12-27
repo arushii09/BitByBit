@@ -18,11 +18,6 @@ function loadCalendar() {
       </div>
     </div>
 
-    <div class="weekdays">
-      <span>Sun</span><span>Mon</span><span>Tue</span>
-      <span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
-    </div>
-
     <div id="calendar" class="calendar"></div>
 
     <div id="modal" class="modal">
@@ -77,17 +72,17 @@ function loadCalendar() {
     const firstDay = new Date(year, month, 1).getDay();
     const totalDays = new Date(year, month + 1, 0).getDate();
 
-    for (let i = 0; i < firstDay; i++) {
-      calendar.innerHTML += `<div></div>`;
-    }
-
     for (let d = 1; d <= totalDays; d++) {
       const key = `${year}-${month}-${d}`;
       const tasks = calendarData[key] || [];
+      const dayOfWeek = new Date(year, month, d).getDay();
+      const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      const dayName = dayNames[dayOfWeek];
 
       calendar.innerHTML += `
         <div class="day" data-key="${key}">
           <div class="date">${d}</div>
+          <div class="weekday-name">${dayName}</div>
           ${tasks.map(t =>
             `<div class="task ${t.type.toLowerCase()}">${t.task}</div>`
           ).join("")}
