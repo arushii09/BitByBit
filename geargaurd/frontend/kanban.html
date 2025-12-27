@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kanban | GearGuard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="top-nav">
+  <span onclick="location.href='index.html'">Dashboard</span>
+  <span class="active">Kanban</span>
+  <span onclick="location.href='calendar.html'">Calendar</span>
+  <span onclick="location.href='equipment.html'">Equipment</span>
+</header>
+
+<div class="kanban">
+
+  <div class="column">
+    <h3>New</h3>
+    <div class="card" draggable="true">Oil Leakage</div>
+    <div class="card" draggable="true">Printer Not Working</div>
+  </div>
+
+  <div class="column">
+    <h3>In Progress</h3>
+  </div>
+
+  <div class="column">
+    <h3>Repaired</h3>
+  </div>
+
+  <div class="column scrap">
+    <h3>Scrap</h3>
+  </div>
+
+</div>
+
+<script src="js/kanban.js"></script>
+</body>
+</html>

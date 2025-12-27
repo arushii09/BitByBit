@@ -1,0 +1,175 @@
+/* ================================
+   REQUEST PAGE – PREMIUM THEME
+================================ */
+
+/* Page wrapper */
+.request-page {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 22px;
+  border: 1px dashed #2f2f2f;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.03), transparent 60%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+}
+
+/* Header / Breadcrumb */
+.request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  border-bottom: 1px dashed #333;
+  padding-bottom: 16px;
+}
+
+.request-title {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.request-stage {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Two-column layout */
+.request-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+/* Section titles */
+.form-section h4 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #bbb;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Field blocks */
+.field {
+  margin-bottom: 22px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+.field .value {
+  font-size: 17px;
+  font-weight: 500;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #2c2c2c;
+}
+
+/* Dropdown-like values */
+.value.select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.value.select::after {
+  content: "▾";
+  color: #666;
+  font-size: 14px;
+}
+
+/* Radio style (Corrective / Preventive) */
+.radio-group {
+  display: flex;
+  gap: 22px;
+  margin-top: 6px;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+.radio span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #666;
+}
+
+.radio.active span {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+/* Priority diamonds */
+.priority {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.priority span {
+  width: 14px;
+  height: 14px;
+  transform: rotate(45deg);
+  border: 1px solid #555;
+}
+
+.priority span.active {
+  background: #22c55e;
+  border-color: #22c55e;
+}
+
+/* Worksheet button */
+.worksheet-btn {
+  margin-top: 30px;
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: 1px solid #555;
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.worksheet-btn:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* Notes / Instructions tabs */
+.tabs {
+  display: flex;
+  gap: 14px;
+  margin-top: 40px;
+  border-top: 1px dashed #333;
+  padding-top: 18px;
+}
+
+.tab {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px dashed #444;
+  color: #aaa;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #fff;
+  border-color: #fff;
+}
